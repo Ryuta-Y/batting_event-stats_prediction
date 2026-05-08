@@ -1,0 +1,7 @@
+target,best_method,metric,value,n
+EV,Context baseline,mae,9.63,"272,037"
+LA,Raw video DNN fine-tune,mae,11.94,685
+Hard-hit,Raw video DNN fine-tune,brier,0.113,684
+Barrel,Raw video DNN fine-tune,brier,0.045,684
+xBA,Raw video DNN fine-tune,mae,0.187,672
+xwOBA,Raw video DNN fine-tune,mae,0.243,681

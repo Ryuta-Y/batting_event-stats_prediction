@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="430" viewBox="0 0 1220 430">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+  </marker>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="610.0" y="34.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="700" fill="#1f2937">Metric explainer: what each number means</text>
+<rect x="42.0" y="78.0" width="250.0" height="158.0" rx="12" fill="#dbeafe" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="167.0" y="112.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#1f2937">MAE</text>
+<text x="167.0" y="146.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="500" fill="#334155">mean |pred - true|</text>
+<text x="167.0" y="176.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#475569">EV / LA / xBA</text>
+<text x="167.0" y="206.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#0f172a">smaller is better</text>
+<rect x="330.0" y="78.0" width="250.0" height="158.0" rx="12" fill="#dcfce7" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="455.0" y="112.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#1f2937">Brier</text>
+<text x="455.0" y="146.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="500" fill="#334155">mean (prob - label)^2</text>
+<text x="455.0" y="176.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#475569">hard-hit / barrel</text>
+<text x="455.0" y="206.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#0f172a">smaller is better</text>
+<rect x="618.0" y="78.0" width="250.0" height="158.0" rx="12" fill="#fef3c7" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="743.0" y="112.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#1f2937">Spearman rho</text>
+<text x="743.0" y="146.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="500" fill="#334155">corr(rank true, rank pred)</text>
+<text x="743.0" y="176.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#475569">player ranking</text>
+<text x="743.0" y="206.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#0f172a">-1 to +1; larger is better</text>
+<rect x="906.0" y="78.0" width="250.0" height="158.0" rx="12" fill="#fee2e2" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1031.0" y="112.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#1f2937">n</text>
+<text x="1031.0" y="146.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="500" fill="#334155">usable rows for metric</text>
+<text x="1031.0" y="176.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#475569">coverage / reliability</text>
+<text x="1031.0" y="206.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#0f172a">larger is safer</text>
+<text x="610.0" y="296.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="600" fill="#334155">Spearman example: rho=0.9 means the model almost preserves player ordering; rho=0 means ordering is mostly unrelated.</text>
+<line x1="250" y1="350" x2="970" y2="350" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
+<circle cx="250" cy="350" r="12" fill="#dc2626"/>
+<text x="250.0" y="388.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#dc2626">-1 inverse</text>
+<circle cx="610" cy="350" r="12" fill="#ca8a04"/>
+<text x="610.0" y="388.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#ca8a04">0 none</text>
+<circle cx="970" cy="350" r="12" fill="#16a34a"/>
+<text x="970.0" y="388.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#16a34a">+1 aligned</text>
+</svg>

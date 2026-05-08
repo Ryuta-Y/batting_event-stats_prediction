@@ -1,0 +1,9 @@
+method,method_key,ev,la,hard_hit,barrel,xba,xwoba
+Context baseline,context,"272,037","272,187","272,037","272,035","268,096","270,916"
+Structured sequence deterministic,structured_sequence,392,393,392,392,386,392
+Detection/Tracking/Pose TCN,pose_object_tcn,684,685,684,684,672,681
+Raw video lightweight,raw_video_lightweight,684,685,684,684,672,681
+Raw video frozen encoder,raw_video_frozen,684,685,684,684,672,681
+Raw video DNN fine-tune,raw_video_finetune,684,685,684,684,672,681
+VLM mechanics features,vlm,99,100,99,99,98,98
+Late fusion,fusion,"272,037","272,187","272,037","272,035","268,096","270,916"

@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1025" viewBox="0 0 1900 1025">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+  </marker>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="900.0" y="36.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#1f2937">Corrected method flow: inputs, derived artifacts, labels, predictions, fusion</text>
+<text x="900.0" y="62.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#475569">Solid arrows are inference/data-feature flow. Dashed arrows are training/calibration/evaluation labels, not prediction-time inputs.</text>
+<text x="150.0" y="98.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#334155">1. data sources</text>
+<text x="455.0" y="98.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#334155">2. derived artifacts</text>
+<text x="760.0" y="98.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#334155">3. event methods</text>
+<text x="1060.0" y="98.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#334155">4. event predictions</text>
+<text x="1360.0" y="98.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#334155">5. season projection / prior</text>
+<text x="1640.0" y="98.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#334155">6. fusion outputs</text>
+<rect x="40.0" y="130.0" width="230.0" height="118.0" rx="12" fill="#dbeafe" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="155.0" y="158.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1f2937">Statcast BBE manifest</text>
+<text x="58.0" y="188.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">context features</text>
+<text x="58.0" y="205.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">event true labels</text>
+<text x="58.0" y="222.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">272,989 events</text>
+<rect x="40.0" y="310.0" width="230.0" height="118.0" rx="12" fill="#e0f2fe" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="155.0" y="338.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1f2937">Raw MLB videos</text>
+<text x="58.0" y="368.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">broadcast batting videos</text>
+<text x="58.0" y="385.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">930 downloaded</text>
+<rect x="320.0" y="310.0" width="230.0" height="118.0" rx="12" fill="#dcfce7" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="435.0" y="338.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1f2937">Contact clips</text>
+<text x="338.0" y="368.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">trimmed around contact</text>
+<text x="338.0" y="385.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">814 clips</text>
+<rect x="40.0" y="620.0" width="230.0" height="118.0" rx="12" fill="#fce7f3" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="155.0" y="648.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1f2937">Player-season labels</text>
+<text x="58.0" y="678.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">BA / OBP / SLG / OPS</text>
+<text x="58.0" y="695.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">season rates</text>
+<text x="58.0" y="712.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">TEACHER / EVAL ONLY</text>
+<rect x="320.0" y="480.0" width="250.0" height="118.0" rx="12" fill="#fef3c7" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="445.0" y="508.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1f2937">CV artifacts</text>
+<text x="338.0" y="538.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">created FROM contact clips</text>
+<text x="338.0" y="555.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">YOLO detections</text>
+<text x="338.0" y="572.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">pose / bat / plate</text>
+<rect x="320.0" y="620.0" width="250.0" height="118.0" rx="12" fill="#fdf2f8" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="445.0" y="648.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14" font-weight="700" fill="#1f2937">Multi-clip season prior</text>
+<text x="338.0" y="678.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">batter-season mechanics</text>
+<text x="338.0" y="695.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">aggregated clip evidence</text>
+<text x="338.0" y="712.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">not BA/OPS as input</text>
+<rect x="650.0" y="130.0" width="250.0" height="112.0" rx="12" fill="#eff6ff" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="775.0" y="158.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Context</text>
+<text x="668.0" y="188.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">CatBoost</text>
+<text x="668.0" y="206.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">272,989 event samples</text>
+<rect x="650.0" y="310.0" width="250.0" height="112.0" rx="12" fill="#f0fdf4" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="775.0" y="338.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Clip visual</text>
+<text x="668.0" y="368.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">OpenCV / VideoMAE / R3D-18</text>
+<text x="668.0" y="386.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">687 event samples</text>
+<rect x="650.0" y="480.0" width="250.0" height="112.0" rx="12" fill="#fff7ed" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="775.0" y="508.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">CV sequence</text>
+<text x="668.0" y="538.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">YOLO + pose -&gt; TCN</text>
+<text x="668.0" y="556.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">687 event samples</text>
+<rect x="650.0" y="650.0" width="250.0" height="112.0" rx="12" fill="#f5f3ff" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="775.0" y="678.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">VLM mechanics</text>
+<text x="668.0" y="708.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">Qwen captions / tags</text>
+<text x="668.0" y="726.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">100 event samples</text>
+<rect x="980.0" y="300.0" width="250.0" height="150.0" rx="12" fill="#fee2e2" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1105.0" y="330.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Event predictions</text>
+<text x="998.0" y="362.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">EV / LA</text>
+<text x="998.0" y="380.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">hard-hit / barrel</text>
+<text x="998.0" y="398.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">xBA / xwOBA</text>
+<text x="998.0" y="416.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">one row per target</text>
+<rect x="1280.0" y="250.0" width="260.0" height="170.0" rx="12" fill="#fef2f2" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1410.0" y="280.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Event-to-season projection</text>
+<text x="1298.0" y="314.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">aggregate event predictions</text>
+<text x="1298.0" y="332.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">by batter-season</text>
+<text x="1298.0" y="350.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">avg_ev/rates direct</text>
+<text x="1298.0" y="368.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">BA/OBP/SLG/OPS calibrated</text>
+<rect x="1280.0" y="550.0" width="260.0" height="145.0" rx="12" fill="#fdf2f8" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1410.0" y="580.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Player-season prior model</text>
+<text x="1298.0" y="614.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">uses mechanics prior</text>
+<text x="1298.0" y="632.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">fits season targets</text>
+<text x="1298.0" y="650.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">1,768 season samples</text>
+<rect x="1280.0" y="760.0" width="260.0" height="130.0" rx="12" fill="#fce7f3" stroke="#be185d" stroke-width="1.2"/>
+<text x="1410.0" y="790.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#831843">Season true labels</text>
+<text x="1298.0" y="824.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="600" fill="#831843">BA / OBP / SLG / OPS</text>
+<text x="1298.0" y="842.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="600" fill="#831843">avg EV / xBA / xwOBA</text>
+<text x="1298.0" y="860.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="600" fill="#831843">not inference features</text>
+<rect x="1600.0" y="260.0" width="250.0" height="145.0" rx="12" fill="#ede9fe" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1725.0" y="290.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Event fusion</text>
+<text x="1618.0" y="324.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">aligned event rows</text>
+<text x="1618.0" y="342.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">fixed weighted average</text>
+<text x="1618.0" y="360.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">272,989 event samples</text>
+<rect x="1600.0" y="540.0" width="250.0" height="155.0" rx="12" fill="#ede9fe" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1725.0" y="570.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Season fusion</text>
+<text x="1618.0" y="604.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">event projections</text>
+<text x="1618.0" y="622.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">+ season-prior model</text>
+<text x="1618.0" y="640.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">1,768 season samples</text>
+<text x="1618.0" y="658.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">fixed weighted average</text>
+<rect x="1600.0" y="775.0" width="250.0" height="100.0" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1725.0" y="807.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="15" font-weight="700" fill="#1f2937">Research report</text>
+<text x="1725.0" y="838.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="500" fill="#334155">tables / figures / HTML</text>
+<line x1="270.0" y1="189.0" x2="650.0" y2="186.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="270.0" y1="369.0" x2="320.0" y2="369.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="550.0" y1="369.0" x2="650.0" y2="366.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="550.0" y1="392.0" x2="650.0" y2="704.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="435.0" y1="428.0" x2="435.0" y2="480.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="462.0" y="458.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="700" fill="#92400e">derive CV</text>
+<line x1="570.0" y1="539.0" x2="650.0" y2="536.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="550.0" y1="416.0" x2="445.0" y2="620.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="900.0" y1="186.0" x2="980.0" y2="355.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="900.0" y1="366.0" x2="980.0" y2="372.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="900.0" y1="536.0" x2="980.0" y2="388.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="900.0" y1="704.0" x2="980.0" y2="405.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="1230.0" y1="375.0" x2="1280.0" y2="335.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="1540.0" y1="335.0" x2="1600.0" y2="332.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="1540.0" y1="335.0" x2="1600.0" y2="618.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="1540.0" y1="623.0" x2="1600.0" y2="618.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="1725.0" y1="405.0" x2="1725.0" y2="775.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="1725.0" y1="695.0" x2="1725.0" y2="775.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="270.0" y1="679.0" x2="1280.0" y2="825.0" stroke="#be185d" stroke-width="2.0" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<line x1="1540.0" y1="825.0" x2="1410.0" y2="695.0" stroke="#be185d" stroke-width="2.0" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<line x1="1540.0" y1="825.0" x2="1410.0" y2="420.0" stroke="#be185d" stroke-width="2.0" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<rect x="40.0" y="925.0" width="1810.0" height="72.0" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="1.2"/>
+<text x="945.0" y="954.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#7c2d12">Correct reading: CV artifacts are derived from contact clips. BA/OBP/SLG/OPS are labels for fitting/calibration/evaluation, not input features at inference.</text>
+<text x="945.0" y="978.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#7c2d12">Season predictions come from event-to-season projection for event methods AND from the separate player-season mechanics prior model.</text>
+</svg>

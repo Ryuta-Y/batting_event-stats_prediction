@@ -1,0 +1,9 @@
+method,method_key,ev,la,hard_hit,barrel,xba,xwoba
+Context baseline,context,50,51,50,50,50,50
+Structured sequence deterministic,structured_sequence,50,51,50,50,50,50
+Detection/Tracking/Pose TCN,pose_object_tcn,50,51,50,50,50,50
+Raw video lightweight,raw_video_lightweight,50,51,50,50,50,50
+Raw video frozen encoder,raw_video_frozen,50,51,50,50,50,50
+Raw video DNN fine-tune,raw_video_finetune,50,51,50,50,50,50
+VLM mechanics features,vlm,50,51,50,50,50,50
+Late fusion,fusion,50,51,50,50,50,50

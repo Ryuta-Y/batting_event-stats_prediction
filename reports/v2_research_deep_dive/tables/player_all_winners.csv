@@ -1,0 +1,11 @@
+target,best_method,metric,value,n
+Avg EV,Context baseline,mae,1.95,"1,767"
+Avg LA,Context baseline,mae,3.85,"1,767"
+Avg xBA,Context baseline,mae,0.035,"1,767"
+Avg xwOBA,Context baseline,mae,0.049,"1,767"
+Hard-hit rate,Context baseline,mae,0.054,"1,767"
+Barrel rate,Context baseline,mae,0.028,"1,767"
+BA,VLM mechanics features,mae,0.021,58
+OBP,VLM mechanics features,mae,0.028,58
+SLG,VLM mechanics features,mae,0.058,58
+OPS,VLM mechanics features,mae,0.073,58

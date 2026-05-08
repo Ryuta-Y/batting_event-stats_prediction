@@ -1,0 +1,9 @@
+method,method_key,ev,la,hard_hit,barrel,xba,xwoba
+Context baseline,context,,,,,,0.363
+Structured sequence deterministic,structured_sequence,,,,,,0.021
+Detection/Tracking/Pose TCN,pose_object_tcn,,,,,,0.027
+Raw video lightweight,raw_video_lightweight,,,,,,0.141
+Raw video frozen encoder,raw_video_frozen,,,,,,0.610
+Raw video DNN fine-tune,raw_video_finetune,,,,,,0.839
+VLM mechanics features,vlm,,,,,,0.026
+Late fusion,fusion,,,,,,0.804

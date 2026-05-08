@@ -1,0 +1,10 @@
+method_key,method,inputs,model,event_samples,event_prediction_rows,player_season_samples,player_season_prediction_rows,fusion_role
+context,Context baseline,Statcast BBE context features only,CatBoost/tabular baseline,"272,989","1,637,934","1,768","35,350",direct source
+structured_sequence,Structured sequence deterministic,"Contact-aligned clip features, player-season prior when available",Deterministic structured feature baseline,394,"2,364",252,"2,520",direct source
+pose_object_tcn,Detection/Tracking/Pose TCN,YOLO/tracking/pose/bat-line structured frame sequence,TCN depth=3 hidden=64,687,"4,122",381,"3,810",direct source
+raw_video_lightweight,Raw video lightweight,OpenCV lightweight motion/appearance features,Classical CV feature head,687,"4,122",381,"3,810",direct source
+raw_video_frozen,Raw video frozen encoder,Contact-aligned clip frames,videomae / MCG-NJU/videomae-base-finetuned-kinetics,687,"4,122",381,"3,810",direct source
+raw_video_finetune,Raw video DNN fine-tune,Raw contact-aligned clip frames,torchvision_r3d18 pretrained=True epochs=5,687,"4,122",381,"3,810",direct source
+player_season,Player-season mechanics prior,"Batter-season mechanics prior features; BA/OBP/SLG/OPS are supervised labels, not runtime input features",Player-season aggregate baseline,,,"1,768","17,680",direct source
+vlm,VLM mechanics features,Qwen VLM captions/tags from 100 clips,Qwen/Qwen2.5-VL-3B-Instruct,100,600,58,580,direct source
+fusion,Late fusion,"Aligned prediction rows from event methods, event-to-season projections, and player-season prior",Weighted average over aligned predictions by event/player-season and target,"272,989","1,637,934","1,768","35,350",final weighted average

@@ -1,0 +1,11 @@
+target,best_method,metric,value,n
+Avg EV,Context baseline,mae,0.89,37
+Avg LA,Context baseline,mae,1.81,37
+Avg xBA,Context baseline,mae,0.014,37
+Avg xwOBA,Context baseline,mae,0.022,37
+Hard-hit rate,Context baseline,mae,0.019,37
+Barrel rate,Context baseline,mae,0.013,37
+BA,Late fusion,mae,0.018,37
+OBP,Context baseline,mae,0.023,37
+SLG,Context baseline,mae,0.038,37
+OPS,Late fusion,mae,0.050,37

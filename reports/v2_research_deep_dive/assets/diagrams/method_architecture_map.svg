@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+  </marker>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="640.0" y="36.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="700" fill="#1f2937">method architecture map</text>
+<text x="110.0" y="58.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Method</text>
+<text x="410.0" y="58.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Input</text>
+<text x="710.0" y="58.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Model</text>
+<text x="1010.0" y="58.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Role</text>
+<rect x="24.0" y="48.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="53.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="74.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">Context</text>
+<rect x="332.0" y="53.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="74.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">Statcast context</text>
+<rect x="632.0" y="53.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="74.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">CatBoost</text>
+<rect x="932.0" y="53.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="74.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">no video</text>
+<rect x="24.0" y="100.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="105.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="126.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">OpenCV</text>
+<rect x="332.0" y="105.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="126.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">clip pixels</text>
+<rect x="632.0" y="105.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="126.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">RGB/motion stats</text>
+<rect x="932.0" y="105.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="126.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">classical features</text>
+<rect x="24.0" y="152.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="157.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="178.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">VideoMAE</text>
+<rect x="332.0" y="157.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="178.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">16 clip frames</text>
+<rect x="632.0" y="157.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="178.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">frozen encoder</text>
+<rect x="932.0" y="157.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="178.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">linear head</text>
+<rect x="24.0" y="204.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="209.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="230.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">R3D-18</text>
+<rect x="332.0" y="209.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="230.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">16 clip frames</text>
+<rect x="632.0" y="209.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="230.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">pretrained 3D CNN</text>
+<rect x="932.0" y="209.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="230.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">fine-tuned</text>
+<rect x="24.0" y="256.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="261.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="282.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">Pose/TCN</text>
+<rect x="332.0" y="261.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="282.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">YOLO + tracking + pose</text>
+<rect x="632.0" y="261.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="282.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">TCN depth 3</text>
+<rect x="932.0" y="261.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="282.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">sequence features</text>
+<rect x="24.0" y="308.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="313.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="334.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">VLM</text>
+<rect x="332.0" y="313.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="334.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">clip video</text>
+<rect x="632.0" y="313.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="334.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">Qwen2.5-VL-3B</text>
+<rect x="932.0" y="313.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="334.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">caption/tags</text>
+<rect x="24.0" y="360.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="365.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="386.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">Season prior</text>
+<rect x="332.0" y="365.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="386.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">multi-clip batter-season</text>
+<rect x="632.0" y="365.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="386.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">quality pooling</text>
+<rect x="932.0" y="365.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="386.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">season targets</text>
+<rect x="24.0" y="412.0" width="1230.0" height="42.0" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="32.0" y="417.0" width="276.0" height="32.0" rx="7" fill="#dbeafe" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="170.0" y="438.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#0f172a">Fusion</text>
+<rect x="332.0" y="417.0" width="276.0" height="32.0" rx="7" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="470.0" y="438.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">aligned predictions</text>
+<rect x="632.0" y="417.0" width="276.0" height="32.0" rx="7" fill="#fef3c7" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="770.0" y="438.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">weighted average</text>
+<rect x="932.0" y="417.0" width="276.0" height="32.0" rx="7" fill="#fee2e2" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1070.0" y="438.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="400" fill="#0f172a">not learned</text>
+</svg>

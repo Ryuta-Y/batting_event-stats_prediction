@@ -1,0 +1,7 @@
+target,best_method,metric,value,n
+EV,Raw video DNN fine-tune,mae,8.50,50
+LA,Raw video DNN fine-tune,mae,7.59,51
+Hard-hit,Raw video DNN fine-tune,brier,0.081,50
+Barrel,Raw video DNN fine-tune,brier,0.009,50
+xBA,Raw video DNN fine-tune,mae,0.146,50
+xwOBA,Raw video DNN fine-tune,mae,0.198,50

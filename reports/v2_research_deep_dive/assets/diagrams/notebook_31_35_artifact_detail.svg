@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1960" height="1710" viewBox="0 0 1960 1710">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+  </marker>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="980.0" y="34.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#1f2937">31-35 detailed execution map: notebooks, artifacts, counts, formats</text>
+<text x="980.0" y="62.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="600" fill="#475569">Dense implementation map for understanding the pipeline. Use the clean flow figure for presentation.</text>
+<rect x="40.0" y="92.0" width="280.0" height="40.0" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="180.0" y="118.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Notebook</text>
+<rect x="360.0" y="92.0" width="330.0" height="40.0" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="525.0" y="118.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Inputs</text>
+<rect x="730.0" y="92.0" width="350.0" height="40.0" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="905.0" y="118.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Processing</text>
+<rect x="1120.0" y="92.0" width="350.0" height="40.0" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1295.0" y="118.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Outputs / counts</text>
+<rect x="1510.0" y="92.0" width="390.0" height="40.0" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="1705.0" y="118.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#334155">Formats / resume</text>
+<rect x="24.0" y="142.0" width="1908.0" height="288.0" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="40.0" y="160.0" width="280.0" height="246.0" rx="12" fill="#eff6ff" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="180.0" y="194.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#0f172a">31</text>
+<text x="58.0" y="232.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">31_cpu_context_cv_sequence_light_video</text>
+<text x="58.0" y="250.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">CPU / high RAM</text>
+<text x="58.0" y="268.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">progress JSON and compact_runs JSONL; skip if expected outputs exist</text>
+<rect x="360.0" y="160.0" width="330.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="378.0" y="194.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">Statcast BBE manifest</text>
+<text x="378.0" y="212.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">v2 raw videos/reused downloads</text>
+<rect x="730.0" y="160.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="748.0" y="194.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">Context CatBoost</text>
+<text x="748.0" y="212.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">clip/contact preprocessing</text>
+<text x="748.0" y="230.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">deterministic structured sequence</text>
+<text x="748.0" y="248.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">lightweight OpenCV video baseline</text>
+<rect x="1120.0" y="160.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1138.0" y="194.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">context 272,989 event samples</text>
+<text x="1138.0" y="212.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">clips 814</text>
+<text x="1138.0" y="230.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">structured 394 event samples</text>
+<text x="1138.0" y="248.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">OpenCV 687 event samples</text>
+<rect x="1510.0" y="160.0" width="390.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1528.0" y="194.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">predictions_v1.parquet</text>
+<text x="1528.0" y="212.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">metrics_v1.json</text>
+<text x="1528.0" y="230.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">clips_v1.parquet</text>
+<text x="1528.0" y="248.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">feature manifests</text>
+<line x1="980.0" y1="425.0" x2="980.0" y2="460.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="24.0" y="447.0" width="1908.0" height="288.0" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="40.0" y="465.0" width="280.0" height="246.0" rx="12" fill="#f0fdf4" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="180.0" y="499.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#0f172a">32</text>
+<text x="58.0" y="537.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">32_gpu_deep_cv_feature_extraction</text>
+<text x="58.0" y="555.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">GPU L4/A100</text>
+<text x="58.0" y="573.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">deep_cv, deep_sequence, overlay progress files; force flags when pose was incomplete</text>
+<rect x="360.0" y="465.0" width="330.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="378.0" y="499.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">clips_v1.parquet and clip mp4 files</text>
+<rect x="730.0" y="465.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="748.0" y="499.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">YOLO/tracking/pose/bat/plate/homography</text>
+<text x="748.0" y="517.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">deep sequence features</text>
+<text x="748.0" y="535.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">debug overlay videos</text>
+<rect x="1120.0" y="465.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1138.0" y="499.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">detections 1,180,924 rows</text>
+<text x="1138.0" y="517.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">pose2d 110,203 rows</text>
+<text x="1138.0" y="535.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">structured sequence 687 clips / 21,984</text>
+<text x="1138.0" y="553.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">frame rows</text>
+<text x="1138.0" y="571.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">overlays 30</text>
+<rect x="1510.0" y="465.0" width="390.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1528.0" y="499.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">detections/tracks/pose/object parquet</text>
+<text x="1528.0" y="517.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">frames parquet</text>
+<text x="1528.0" y="535.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">overlay mp4</text>
+<text x="1528.0" y="553.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">progress JSON</text>
+<line x1="980.0" y1="730.0" x2="980.0" y2="765.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="24.0" y="752.0" width="1908.0" height="288.0" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="40.0" y="770.0" width="280.0" height="246.0" rx="12" fill="#fff7ed" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="180.0" y="804.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#0f172a">33</text>
+<text x="58.0" y="842.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">33_gpu_sequence_and_video_models</text>
+<text x="58.0" y="860.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">GPU L4/A100</text>
+<text x="58.0" y="878.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">epoch/clip progress JSON and model checkpoints</text>
+<rect x="360.0" y="770.0" width="330.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="378.0" y="804.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">structured sequence features</text>
+<text x="378.0" y="822.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">contact clip videos</text>
+<rect x="730.0" y="770.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="748.0" y="804.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">TCN sequence training</text>
+<text x="748.0" y="822.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">frozen VideoMAE encoder</text>
+<text x="748.0" y="840.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">raw video R3D-18 fine-tune</text>
+<rect x="1120.0" y="770.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1138.0" y="804.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">TCN 687 event samples</text>
+<text x="1138.0" y="822.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">VideoMAE 687</text>
+<text x="1138.0" y="840.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">R3D-18 687</text>
+<rect x="1510.0" y="770.0" width="390.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1528.0" y="804.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">predictions_v1.parquet</text>
+<text x="1528.0" y="822.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">metrics_v1.json</text>
+<text x="1528.0" y="840.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">checkpoints .pt</text>
+<text x="1528.0" y="858.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">embedding manifest</text>
+<line x1="980.0" y1="1035.0" x2="980.0" y2="1070.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="24.0" y="1057.0" width="1908.0" height="288.0" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="40.0" y="1075.0" width="280.0" height="246.0" rx="12" fill="#f5f3ff" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="180.0" y="1109.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#0f172a">34</text>
+<text x="58.0" y="1147.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">34_gpu_vlm_mechanics</text>
+<text x="58.0" y="1165.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">GPU L4/A100</text>
+<text x="58.0" y="1183.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">target complete rows controlled by HF_VLM_MAX_ROWS; complete rows reused</text>
+<rect x="360.0" y="1075.0" width="330.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="378.0" y="1109.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">VLM feature template from clips</text>
+<text x="378.0" y="1127.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">clip videos</text>
+<rect x="730.0" y="1075.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="748.0" y="1109.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">Qwen VLM mechanics caption/tags/scores</text>
+<text x="748.0" y="1127.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">VLM feature baseline</text>
+<rect x="1120.0" y="1075.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1138.0" y="1109.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">VLM manifest 687 rows</text>
+<text x="1138.0" y="1127.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">complete 100</text>
+<text x="1138.0" y="1145.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">failed 587</text>
+<text x="1138.0" y="1163.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">event predictions 100 samples / 600</text>
+<text x="1138.0" y="1181.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">target rows</text>
+<rect x="1510.0" y="1075.0" width="390.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1528.0" y="1109.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">features/vlm manifest parquet</text>
+<text x="1528.0" y="1127.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">predictions_v1.parquet</text>
+<text x="1528.0" y="1145.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">summary JSON</text>
+<line x1="980.0" y1="1340.0" x2="980.0" y2="1375.0" stroke="#64748b" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="24.0" y="1362.0" width="1908.0" height="288.0" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="40.0" y="1380.0" width="280.0" height="246.0" rx="12" fill="#fdf2f8" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="180.0" y="1414.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#0f172a">35</text>
+<text x="58.0" y="1452.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">35_cpu_evaluation_fusion_reports</text>
+<text x="58.0" y="1470.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">CPU</text>
+<text x="58.0" y="1488.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">v2 provenance checks; reruns only if VLM/fusion/research provenance missing</text>
+<rect x="360.0" y="1380.0" width="330.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="378.0" y="1414.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">all method predictions</text>
+<text x="378.0" y="1432.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">player-season labels</text>
+<text x="378.0" y="1450.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">fusion source_runs</text>
+<rect x="730.0" y="1380.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="748.0" y="1414.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">player-season prior</text>
+<text x="748.0" y="1432.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">event-to-season projections</text>
+<text x="748.0" y="1450.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">late fusion</text>
+<text x="748.0" y="1468.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">ablation/method evaluation</text>
+<text x="748.0" y="1486.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">research outputs</text>
+<rect x="1120.0" y="1380.0" width="350.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1138.0" y="1414.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">fusion 272,989 event samples and 1,768</text>
+<text x="1138.0" y="1432.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">season samples</text>
+<text x="1138.0" y="1450.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">method metrics 138 rows</text>
+<text x="1138.0" y="1468.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">baseline comparisons 488 rows</text>
+<text x="1138.0" y="1486.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">research overlay videos 12</text>
+<rect x="1510.0" y="1380.0" width="390.0" height="246.0" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="1528.0" y="1414.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">fusion predictions/audit parquet</text>
+<text x="1528.0" y="1432.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">CSV tables</text>
+<text x="1528.0" y="1450.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">HTML reports</text>
+<text x="1528.0" y="1468.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">PNG/SVG figures</text>
+<text x="1528.0" y="1486.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11" font-weight="500" fill="#334155">overlay mp4</text>
+<rect x="70.0" y="1590.0" width="1820.0" height="82.0" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="1.2"/>
+<text x="980.0" y="1620.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="700" fill="#7c2d12">31 creates clips/light baselines; 32 derives CV/pose/sequence artifacts; 33 trains video/sequence models; 34 adds VLM; 35 projects to season, fuses, and reports.</text>
+<text x="980.0" y="1646.0" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12" font-weight="700" fill="#831843">Season labels are used only for training/calibration/evaluation of player-season targets. They are not inference-time features.</text>
+</svg>

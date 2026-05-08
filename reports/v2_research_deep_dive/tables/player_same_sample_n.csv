@@ -1,0 +1,10 @@
+method,method_key,avg_ev,avg_la,avg_xba,avg_xwoba,hard_hit_rate,barrel_rate,ba,obp,slg,ops
+Context baseline,context,37,37,37,37,37,37,37,37,37,37
+Structured sequence deterministic,structured_sequence,37,37,37,37,37,37,37,37,37,37
+Detection/Tracking/Pose TCN,pose_object_tcn,37,37,37,37,37,37,37,37,37,37
+Raw video lightweight,raw_video_lightweight,37,37,37,37,37,37,37,37,37,37
+Raw video frozen encoder,raw_video_frozen,37,37,37,37,37,37,37,37,37,37
+Raw video DNN fine-tune,raw_video_finetune,37,37,37,37,37,37,37,37,37,37
+Player-season mechanics prior,player_season,37,37,37,37,37,37,37,37,37,37
+VLM mechanics features,vlm,37,37,37,37,37,37,37,37,37,37
+Late fusion,fusion,37,37,37,37,37,37,37,37,37,37

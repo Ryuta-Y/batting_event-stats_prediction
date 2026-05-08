@@ -1,0 +1,10 @@
+method,method_key,avg_ev,avg_la,avg_xba,avg_xwoba,hard_hit_rate,barrel_rate,ba,obp,slg,ops
+Context baseline,context,0.918,0.917,0.846,0.811,0.872,0.924,0.455,0.350,0.449,0.435
+Structured sequence deterministic,structured_sequence,0.046,-0.283,0.059,-0.005,0.090,-0.118,0.331,0.018,0.003,0.032
+Detection/Tracking/Pose TCN,pose_object_tcn,0.032,-0.142,-0.048,0.066,0.059,-0.204,0.393,-0.034,0.104,0.056
+Raw video lightweight,raw_video_lightweight,-0.003,0.065,-0.102,0.023,-0.032,0.012,0.267,-0.161,0.046,-0.016
+Raw video frozen encoder,raw_video_frozen,0.116,0.061,0.179,0.143,0.160,0.166,0.376,0.122,0.011,-0.011
+Raw video DNN fine-tune,raw_video_finetune,0.335,0.162,-0.008,0.252,0.318,0.184,0.228,0.068,0.124,0.140
+Player-season mechanics prior,player_season,0.141,-0.240,0.101,0.093,0.150,-0.001,0.320,0.091,0.096,0.109
+VLM mechanics features,vlm,0.049,0.045,0.132,-0.043,0.060,0.112,0.495,0.290,0.167,0.241
+Late fusion,fusion,0.917,0.920,0.790,0.792,0.884,0.910,0.490,0.353,0.442,0.445
