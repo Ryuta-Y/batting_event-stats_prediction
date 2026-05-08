@@ -1,0 +1,27 @@
+{
+  "schema_version": "data_manifest_contract_v1",
+  "drive_root": "/content/drive/MyDrive/baseball_vision",
+  "artifacts": {
+    "bbe_events": "manifests/bbe_events_v1.parquet",
+    "video_sources": "manifests/video_sources_v1.parquet",
+    "player_group_split": "manifests/splits/player_group_split_v1.parquet",
+    "temporal_split": "manifests/splits/temporal_split_v1.parquet"
+  },
+  "identity_policy": {
+    "event_id": "Stable BBE event id derived from game_pk, at_bat_number, pitch_number, and sv_id or play_id.",
+    "batter_season_id": "{batter_id}_{season}",
+    "same_event_group_id": "Defaults to event_id and groups same-event views, crops, and augmentations.",
+    "view_id": "Identifies candidate view/source variants of the same event."
+  },
+  "target_policy": {
+    "bbe_only_targets": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+    "pa_required_targets": ["ops", "obp", "slg"],
+    "missing_optional_labels": "Keep rows and set target_available=false with label_missing_reason. Never fill xBA/xwOBA with zero.",
+    "ops_policy": "OPS is unavailable without PA-level manifest and is never an event-level BBE head."
+  },
+  "clean_cohort_policy": {
+    "initial_zone_preference": [2, 4, 5, 6, 8],
+    "initial_strikes_max": 1,
+    "home_run_sources": "Controlled sample or smoke_test only; never the data universe."
+  }
+}

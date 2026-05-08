@@ -1,0 +1,172 @@
+{
+  "schema_version": "target_registry_v1",
+  "description": "Registry-owned target definitions for event and player-season prediction heads.",
+  "targets": {
+    "ev": {
+      "group": "physics",
+      "level": "event",
+      "column": "launch_speed",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "r2"],
+      "required": true,
+      "requires_pa_manifest": false
+    },
+    "la": {
+      "group": "physics",
+      "level": "event",
+      "column": "launch_angle",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "r2"],
+      "required": true,
+      "requires_pa_manifest": false
+    },
+    "hard_hit": {
+      "group": "quality",
+      "level": "event",
+      "column": "target_hard_hit",
+      "kind": "binary",
+      "loss": "bce",
+      "metrics": ["f1", "brier"],
+      "required": true,
+      "requires_pa_manifest": false,
+      "derived_from": "launch_speed >= 95"
+    },
+    "barrel": {
+      "group": "quality",
+      "level": "event",
+      "column": "target_barrel",
+      "kind": "binary",
+      "loss": "bce",
+      "metrics": ["f1", "brier"],
+      "required": true,
+      "requires_pa_manifest": false,
+      "derived_from": "Statcast barrel label or documented EV/LA rule"
+    },
+    "xba": {
+      "group": "expected",
+      "level": "event",
+      "column": "estimated_ba_using_speedangle",
+      "kind": "probability",
+      "loss": "mse",
+      "metrics": ["mae", "rmse"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "xwoba": {
+      "group": "expected",
+      "level": "event",
+      "column": "estimated_woba_using_speedangle",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "avg_ev": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_avg_ev",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "avg_la": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_avg_la",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "avg_xba": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_avg_xba",
+      "kind": "probability",
+      "loss": "mse",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "avg_xwoba": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_avg_xwoba",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "hard_hit_rate": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_hard_hit_rate",
+      "kind": "probability",
+      "loss": "mse",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "barrel_rate": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_barrel_rate",
+      "kind": "probability",
+      "loss": "mse",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": false
+    },
+    "ba": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_ba",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": true,
+      "unavailable_without_pa_manifest": true
+    },
+    "obp": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_obp",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": true,
+      "unavailable_without_pa_manifest": true
+    },
+    "slg": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_slg",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": true,
+      "unavailable_without_pa_manifest": true
+    },
+    "ops": {
+      "group": "aggregate",
+      "level": "player_season",
+      "column": "target_ops",
+      "kind": "regression",
+      "loss": "huber",
+      "metrics": ["mae", "rmse", "spearman"],
+      "required": false,
+      "requires_pa_manifest": true,
+      "unavailable_without_pa_manifest": true
+    }
+  }
+}

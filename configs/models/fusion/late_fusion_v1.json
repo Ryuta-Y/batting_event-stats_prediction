@@ -1,0 +1,84 @@
+{
+  "schema_version": "late_fusion_config_v1",
+  "contract_version": "fusion_contract_v1",
+  "model_family": "late_fusion",
+  "input_artifacts": {
+    "context_predictions": "predictions/{context_run_id}/predictions_v1.parquet",
+    "sequence_predictions": "predictions/{sequence_run_id}/predictions_v1.parquet",
+    "sequence_prior_predictions": "predictions/{sequence_prior_run_id}/predictions_v1.parquet",
+    "video_lightweight_predictions": "predictions/{video_lightweight_run_id}/predictions_v1.parquet",
+    "video_predictions": "predictions/{video_run_id}/predictions_v1.parquet",
+    "video_finetune_predictions": "predictions/{video_finetune_run_id}/predictions_v1.parquet",
+    "image_predictions": "predictions/{image_run_id}/predictions_v1.parquet",
+    "vlm_predictions": "predictions/{vlm_run_id}/predictions_v1.parquet",
+    "audio_raw_predictions": "predictions/{audio_raw_run_id}/predictions_v1.parquet",
+    "audio_enhanced_predictions": "predictions/{audio_enhanced_run_id}/predictions_v1.parquet",
+    "audio_separated_predictions": "predictions/{audio_separated_run_id}/predictions_v1.parquet",
+    "audio_embedding_predictions": "predictions/{audio_embedding_run_id}/predictions_v1.parquet"
+  },
+  "output_artifacts": {
+    "predictions": "predictions/{fusion_run_id}/predictions_v1.parquet",
+    "input_audit": "predictions/{fusion_run_id}/fusion_input_audit_v1.parquet"
+  },
+  "fusion_method": {
+    "name": "late_fusion_weighted_average",
+    "per_target": true,
+    "learned_meta_learner": false,
+    "uncertainty_aware": true,
+    "prediction_std_output": true
+  },
+  "scope_weights": {
+    "context_only": 0.75,
+    "current_event_only": 1.0,
+    "current_event_with_player_season_prior": 1.1,
+    "current_event_structured_sequence": 1.0,
+    "raw_video_lightweight": 0.6,
+    "video_frozen_encoder": 0.85,
+    "image_frozen_encoder": 0.75,
+    "raw_video_finetune": 0.9,
+    "player_season_mechanics_prior": 0.8,
+    "vlm_mechanics_features": 0.7,
+    "audio_raw_impact": 0.55,
+    "audio_enhanced_impact": 0.6,
+    "audio_separated_impact": 0.6,
+    "audio_embedding_impact": 0.7,
+    "same_event_view_crop_augmentation_ensemble": 0.95
+  },
+  "allowed_event_targets": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+  "player_season_targets": ["ops", "obp", "slg", "avg_ev", "hard_hit_rate", "barrel_rate"],
+  "availability_policy": {
+    "preserve_target_available": true,
+    "do_not_fill_missing_xba_xwoba_with_zero": true,
+    "skip_all_missing_targets": true,
+    "ops_requires_player_season_upstream": true
+  },
+  "separation_policy": {
+    "same_event_ensemble_scope": "same_event_view_crop_augmentation_ensemble",
+    "player_season_prior_scope": "current_event_with_player_season_prior",
+    "do_not_average_different_events": true
+  },
+  "ablation_plan": [
+    "context_only",
+    "structured_sequence_only",
+    "raw_video_lightweight_only",
+    "video_frozen_encoder_only",
+    "raw_video_finetune_only",
+    "vlm_mechanics_features_only",
+    "audio_raw_impact_only",
+    "audio_enhanced_impact_only",
+    "audio_separated_impact_only",
+    "audio_embedding_impact_only",
+    "image_frozen_encoder_only",
+    "sequence_plus_player_season_prior",
+    "context_sequence_video_image_vlm_late_fusion"
+  ],
+  "calibration_plan": {
+    "initial": "carry prediction_std from inputs and weighted disagreement",
+    "future": "fit per-target isotonic or Platt calibration on validation split only"
+  },
+  "prediction_mapping": {
+    "aggregation_scope_prefix": "late_fusion",
+    "aggregation_method": "late_fusion_weighted_average",
+    "prior_mode": "copied_or_mixed_from_sources"
+  }
+}

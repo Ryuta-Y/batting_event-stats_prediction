@@ -1,0 +1,99 @@
+{
+  "schema_version": "colab_paths_v1",
+  "repo_dir": "/content/drive/MyDrive/codex/batting_codex_handoff",
+  "base_dir": "/content/drive/MyDrive/baseball_vision",
+  "cache_dir": "/content/cache/baseball_vision",
+  "artifact_directories": [
+    "manifests",
+    "manifests/splits",
+    "raw_videos",
+    "clips",
+    "detections",
+    "tracks",
+    "pose2d",
+    "objects",
+    "homography",
+    "features",
+    "datasets",
+    "shards",
+    "models",
+    "predictions",
+    "reports",
+    "reports/preflight",
+    "reports/data_coverage",
+    "reports/target_availability",
+    "reports/clip_quality",
+    "reports/experiment_compare",
+    "reports/failure_browser",
+    "reports/pipeline_io_map",
+    "debug",
+    "logs",
+    "mlruns",
+    "exports"
+  ],
+  "notebook_order": [
+    "notebooks/30_cpu_data_sources_labels_reuse.ipynb",
+    "notebooks/31_cpu_context_cv_sequence_light_video.ipynb",
+    "notebooks/32_gpu_deep_cv_feature_extraction.ipynb",
+    "notebooks/33_gpu_sequence_and_video_models.ipynb",
+    "notebooks/34_gpu_vlm_mechanics.ipynb",
+    "notebooks/35_cpu_evaluation_fusion_reports.ipynb"
+  ],
+  "expected_artifacts": {
+    "preflight": [
+      "reports/preflight/check_env.json",
+      "reports/preflight/init_drive.json"
+    ],
+    "data": [
+      "manifests/bbe_events_v1.parquet",
+      "manifests/splits/player_group_split_v1.parquet",
+      "manifests/splits/temporal_split_v1.parquet"
+    ],
+    "video_probe": [
+      "manifests/video_sources_v1.parquet"
+    ],
+    "context_baseline": [
+      "datasets/context_dataset_v1/manifest.parquet",
+      "predictions/{run_id}/predictions_v1.parquet",
+      "predictions/{run_id}/metrics_v1.json"
+    ],
+    "reports": [
+      "reports/target_availability/{run_id}/index.html",
+      "reports/experiment_compare/{run_id}/index.html",
+      "reports/failure_browser/{run_id}/index.html",
+      "reports/clip_quality/{run_id}/index.html"
+    ]
+  },
+  "support_notebooks": [
+    "notebooks/00_check_env.ipynb",
+    "notebooks/01_init_drive.ipynb",
+    "notebooks/05b_context_catboost_baseline.ipynb",
+    "notebooks/09_report_builder.ipynb",
+    "notebooks/10_full_run_readiness.ipynb",
+    "notebooks/10b_run_isolation_check.ipynb",
+    "notebooks/11_download_statcast_and_video_sources.ipynb",
+    "notebooks/11_a_download_video_shard_1.ipynb",
+    "notebooks/11_b_download_video_shard_2.ipynb",
+    "notebooks/11_c_download_video_shard_3.ipynb",
+    "notebooks/11_d_merge_video_download_shards.ipynb",
+    "notebooks/11_e_seed_v2_download_manifest_from_v1.ipynb",
+    "notebooks/11_f_download_player_season_batting_stats.ipynb",
+    "notebooks/12_full_cv_preprocess.ipynb",
+    "notebooks/13_full_sequence_baseline.ipynb",
+    "notebooks/14_full_video_baseline.ipynb",
+    "notebooks/15_full_fusion.ipynb",
+    "notebooks/16_deep_cv_yolo_pose_homography.ipynb",
+    "notebooks/17_deep_sequence_features.ipynb",
+    "notebooks/18_sequence_tcn_training.ipynb",
+    "notebooks/19_frozen_visual_encoder.ipynb",
+    "notebooks/19b_raw_video_finetune.ipynb",
+    "notebooks/20_video_ablation_compare.ipynb",
+    "notebooks/21_cv_overlay_videos.ipynb",
+    "notebooks/22_research_outputs.ipynb",
+    "notebooks/23_player_season_aggregate_baseline.ipynb",
+    "notebooks/24_vlm_mechanics_baseline.ipynb",
+    "notebooks/24b_hf_vlm_captioning.ipynb",
+    "notebooks/25_method_evaluation.ipynb",
+    "notebooks/26_event_method_player_season_projection.ipynb"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "cv_preprocess_config_v1",
+  "contract_version": "cv_preprocess_contract_v1",
+  "input_artifacts": {
+    "video_sources": "manifests/video_sources_v1.parquet",
+    "bbe_events": "manifests/bbe_events_v1.parquet"
+  },
+  "output_artifacts": {
+    "candidate_segments": "clips/{run_id}/candidate_segments_v1.parquet",
+    "clips": "clips/{run_id}/clips_v1.parquet",
+    "debug_overlays": "debug/{run_id}/debug_overlays_v1.parquet",
+    "detections": "detections/{run_id}/detections_v1.parquet",
+    "tracks": "tracks/{run_id}/tracks_v1.parquet",
+    "pose2d": "pose2d/{run_id}/pose2d_v1.parquet",
+    "bat_detection": "objects/{run_id}/bat_detection_v1.parquet",
+    "bat_line": "objects/{run_id}/bat_line_v1.parquet",
+    "homography": "homography/{run_id}/homography_v1.parquet"
+  },
+  "lifecycle": [
+    "video_source",
+    "candidate_segment",
+    "view_classified",
+    "visibility_checked",
+    "contact_located",
+    "trimmed_clip",
+    "cv_artifacts_ready",
+    "clean_clip_or_review"
+  ],
+  "clip_statuses": {
+    "clean_clip": "Event-aligned, contact-visible clip for the initial clean cohort.",
+    "review_only": "Event candidate retained for inspection, hard negatives, robustness, or future relabeling.",
+    "excluded": "Wrong event, corrupt media, rights blocked, or unusable evidence."
+  },
+  "quality_tiers": [
+    "usable_primary",
+    "usable_with_outliers",
+    "review_only",
+    "excluded"
+  ],
+  "view_labels": [
+    "pitch_center_field",
+    "pitch_catcher_view",
+    "bat_catcher_view",
+    "bat_pitcher_view",
+    "bat_side",
+    "broadcast_infield",
+    "replay_closeup",
+    "ball_flight",
+    "runner_only",
+    "dugout",
+    "crowd",
+    "graphic",
+    "unknown"
+  ],
+  "clean_view_labels": [
+    "bat_catcher_view",
+    "pitch_catcher_view",
+    "broadcast_infield",
+    "bat_side",
+    "bat_pitcher_view"
+  ],
+  "review_only_segment_kinds": [
+    "replay",
+    "dugout",
+    "broadcast_cutaway",
+    "non_batting",
+    "ball_flight",
+    "contact_uncertain"
+  ],
+  "visibility_thresholds": {
+    "view_confidence": 0.5,
+    "contact_confidence": 0.6,
+    "batter_visibility_score": 0.65,
+    "bat_visibility_score": 0.45,
+    "plate_visibility_score": 0.3
+  },
+  "trim_policies": {
+    "pre_contact_long": {
+      "pre_contact_sec": 2.0,
+      "post_contact_sec": 1.0,
+      "primary_for": "full_swing_context_with_early_follow_through"
+    },
+    "contact_window": {
+      "pre_contact_sec": 0.5,
+      "post_contact_sec": 0.3,
+      "primary_for": "contact_neighborhood"
+    },
+    "full_swing": {
+      "pre_contact_sec": 1.6,
+      "post_contact_sec": 0.6,
+      "primary_for": "phase_model"
+    },
+    "raw_source_window": {
+      "pre_contact_sec": null,
+      "post_contact_sec": null,
+      "primary_for": "failure_review"
+    }
+  },
+  "clean_cohort_policy": {
+    "dataset_role": "clean_location_cohort_v1",
+    "allowed_zones": [2, 4, 5, 6, 8],
+    "max_strikes": 1,
+    "exclude_from_initial_clean_when_flags_present": [
+      "difficult_pitch",
+      "pose_extreme_posture",
+      "post_contact_fallaway",
+      "lost_balance",
+      "check_swing_like",
+      "contact_not_visible",
+      "shot_cut_near_contact"
+    ]
+  },
+  "robustness_policy": {
+    "retain_hard_negatives_as": "review_only",
+    "retain_difficult_pitch_as": "usable_with_outliers_or_review_only",
+    "do_not_delete_flags": [
+      "difficult_pitch",
+      "extreme_form",
+      "hard_negative",
+      "non_batting_segment",
+      "replay",
+      "broadcast_cutaway"
+    ]
+  },
+  "debug_outputs": {
+    "overlay_mp4": "debug/{run_id}/overlays/{clip_id}.mp4",
+    "contact_frame_png": "debug/{run_id}/frames/{clip_id}_contact.png",
+    "quality_json": "debug/{run_id}/quality/{clip_id}.json"
+  }
+}

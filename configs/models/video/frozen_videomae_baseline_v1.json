@@ -1,0 +1,53 @@
+{
+  "schema_version": "frozen_video_baseline_config_v1",
+  "model_family": "video_frozen_encoder",
+  "baseline_name": "videomae_base_kinetics_frozen_lightweight_head",
+  "encoder": {
+    "name": "VideoMAE-Base-Kinetics",
+    "model_id": "MCG-NJU/videomae-base-finetuned-kinetics",
+    "mode": "frozen_feature_extractor",
+    "trust_remote_code": false,
+    "download_scope": "colab_only",
+    "local_download_allowed": false,
+    "comparison_note": "Use as a comparison baseline, not the v1 main modeling path."
+  },
+  "inputs": {
+    "clip_manifest": "clips/{run_id}/clips_v1.parquet",
+    "clip_status": ["clean_clip"],
+    "quality_tier": ["usable_primary", "usable_with_outliers"],
+    "clip_versions": ["pre_contact_long", "contact_window"],
+    "source": ["raw_clip", "batter_crop_clip"],
+    "num_frames": [16, 32],
+    "resolution": [224, 256],
+    "sampling_policy": "uniform_contact_centered",
+    "cache_root": "/content/cache/baseball_vision"
+  },
+  "outputs": {
+    "feature_manifest": "features/video_embedding_v1/manifest.parquet",
+    "predictions": "predictions/{run_id}/predictions_v1.parquet"
+  },
+  "heads": {
+    "registry": "configs/targets/target_registry_v1.yaml",
+    "allowed_event_heads": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+    "excluded_event_heads": ["ops"],
+    "optional_loss_mask_heads": ["xba", "xwoba"]
+  },
+  "colab_gpu_policy": {
+    "T4": "16 frames, 224 resolution, frozen encoder features only.",
+    "L4": "16-32 frames, 224/256 resolution, frozen encoder with cached embeddings.",
+    "A100": "May compare larger encoders, but keep full fine-tuning separate from v1 baseline."
+  },
+  "training_policy": {
+    "frozen_encoder": true,
+    "train_lightweight_head": true,
+    "full_raw_video_finetune": false,
+    "local_heavy_training": false
+  },
+  "prediction_mapping": {
+    "prediction_level": "event",
+    "aggregation_scope": "video_frozen_encoder",
+    "prior_mode": "none",
+    "same_event_ensemble": false,
+    "n_prior_clips": 0
+  }
+}

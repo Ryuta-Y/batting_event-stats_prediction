@@ -1,0 +1,597 @@
+{
+  "schema_version": "real_colab_run_profile_v1_v2_derived",
+  "description_ja": "MLB 2024/2025/2026 current-date Statcast BBE + official video-source real-data run profile. This is not a smoke profile.",
+  "paths": {
+    "repo_dir": "/content/drive/MyDrive/codex/batting_codex_handoff",
+    "base_dir": "/content/drive/MyDrive/baseball_vision",
+    "cache_dir": "/content/cache/baseball_vision"
+  },
+  "data_window": {
+    "start_date": "2024-03-20",
+    "end_date": "today",
+    "expected_seasons": [
+      2024,
+      2025,
+      2026
+    ],
+    "game_type": "R",
+    "chunk_days": 1,
+    "notes_ja": "2024 regular-season BBE universe starts at the Seoul Series. end_date=today resolves at Colab runtime, so on 2026-04-28 this is roughly 2024-03-20 through 2026-04-28."
+  },
+  "run_ids": {
+    "context_run_id": "context_catboost_mlb_2024_2026_v2",
+    "recommended_context_run_id": "context_catboost_mlb_2024_2026_v2",
+    "full_run_id": "mlb_2024_2026_full_v2",
+    "object_detector_run_id": "bat_plate_yolo_mlb_2024_2026_v2",
+    "sequence_run_id": "sequence_structured_mlb_2024_2026_v2",
+    "sequence_tcn_run_id": "sequence_tcn_mlb_2024_2026_v2",
+    "video_lightweight_run_id": "video_lightweight_cv2_mlb_2024_2026_v2",
+    "video_frozen_run_id": "video_frozen_encoder_mlb_2024_2026_v2",
+    "video_finetune_run_id": "video_raw_finetune_mlb_2024_2026_v2",
+    "video_run_id": "video_frozen_encoder_mlb_2024_2026_v2",
+    "video_ablation_report_id": "video_ablation_mlb_2024_2026_v2",
+    "method_evaluation_report_id": "method_evaluation_mlb_2024_2026_v2",
+    "player_season_run_id": "player_season_aggregate_mlb_2024_2026_v2",
+    "vlm_run_id": "vlm_mechanics_mlb_2024_2026_v2",
+    "fusion_run_id": "fusion_mlb_2024_2026_v2"
+  },
+  "artifact_namespace": {
+    "structured_sequence_feature_id": "structured_sequence_mlb_2024_2026_v2",
+    "clip_embedding_feature_id": "clip_embedding_mlb_2024_2026_v2",
+    "player_season_embedding_feature_id": "player_season_embedding_mlb_2024_2026_v2",
+    "sequence_dataset_id": "sequence_dataset_mlb_2024_2026_v2",
+    "event_with_prior_dataset_id": "event_with_player_prior_mlb_2024_2026_v2",
+    "video_lightweight_feature_id": "video_lightweight_features_mlb_2024_2026_v2",
+    "video_embedding_feature_id": "video_embedding_mlb_2024_2026_v2",
+    "image_embedding_feature_id": "image_embedding_mlb_2024_2026_v2",
+    "vlm_feature_id": "vlm_mechanics_mlb_2024_2026_v2"
+  },
+  "execution": {
+    "statcast_download": {
+      "execute_default": true,
+      "timeout_sec": 180,
+      "build_manifest": true,
+      "resume": true,
+      "redownload_empty": true,
+      "allow_empty_manifest": false,
+      "allow_partial_manifest": false
+    },
+    "statsapi_resolve": {
+      "execute_default": true,
+      "max_assets_per_event": 2,
+      "min_match_confidence": 0.45,
+      "timeout_sec": 60,
+      "include_savant_play_resolver": true,
+      "max_savant_play_resolves": 25000,
+      "resume": true,
+      "checkpoint_every_events": 25
+    },
+    "player_season_stats": {
+      "execute_default": true,
+      "seasons": [
+        2024,
+        2025,
+        2026
+      ],
+      "timeout_sec": 60,
+      "force": false
+    },
+    "video_download": {
+      "execute_default": true,
+      "max_files": 1500,
+      "max_bytes_per_file": 734003200,
+      "timeout_sec": 900,
+      "allow_hls": true,
+      "batch_count": 3,
+      "num_workers": 2,
+      "require_event_level_match": true,
+      "min_match_confidence": 0.45,
+      "prefer_exact_play": true,
+      "max_sources_per_event": 1,
+      "log_every": 1,
+      "manifest_write_every": 1,
+      "incremental_manifest": true,
+      "resume_existing_files": true
+    },
+    "video_reuse": {
+      "reuse_previous_downloads": true,
+      "source_full_run_ids": [
+        "mlb_2024_2026_full_v1"
+      ],
+      "preserve_existing_canonical_manifest_on_merge": true
+    },
+    "full_cv": {
+      "extract_clips": true,
+      "require_non_empty": true,
+      "require_event_level_match": true,
+      "min_video_match_confidence": 0.45,
+      "contact_search_start_sec": 0.5,
+      "contact_search_end_sec": 8.0,
+      "clip_version": "pre_contact_long",
+      "resume": true,
+      "checkpoint_every_sources": 10,
+      "num_workers": 2,
+      "cache_inputs": true,
+      "cache_outputs": true,
+      "cache_min_free_disk_gb": 30,
+      "cache_max_file_mb": 512,
+      "progress_log_every_sources": 1
+    },
+    "context_catboost": {
+      "install_default": true,
+      "task_type": "CPU",
+      "resume": true
+    },
+    "sequence_baseline": {
+      "prior_mode": "past_only",
+      "aggregation_method": "quality_weighted_pooling",
+      "frame_count": 32,
+      "require_non_empty": true
+    },
+    "deep_cv": {
+      "install_ultralytics_default": true,
+      "install_mmpose_default": false,
+      "install_mmdet_default": false,
+      "install_mediapipe_default": true,
+      "enable_yolo": true,
+      "enable_rtmpose": true,
+      "allow_model_download": true,
+      "yolo_model": "yolo11m.pt",
+      "pose_backend": "mediapipe",
+      "rtmpose_model": "rtmpose-l_8xb32-270e_coco-wholebody-384x288",
+      "rtmpose_det_model": "whole_image",
+      "mediapipe_model_asset_path": "/content/cache/baseball_vision/models/mediapipe/pose_landmarker_lite.task",
+      "mediapipe_model_asset_url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task",
+      "mediapipe_model_complexity": 1,
+      "mediapipe_min_detection_confidence": 0.3,
+      "mediapipe_min_tracking_confidence": 0.3,
+      "tracker": "bytetrack.yaml",
+      "max_clips": 1500,
+      "max_frames_per_clip": 180,
+      "require_non_empty_detections": true,
+      "resume": true,
+      "checkpoint_every_clips": 1,
+      "cache_inputs": true,
+      "cache_num_workers": 4,
+      "cache_min_free_disk_gb": 30,
+      "cache_max_file_mb": 256
+    },
+    "cv_overlay": {
+      "execute_default": true,
+      "max_clips": 30,
+      "include_no_cv": false,
+      "overwrite": true,
+      "update_clips_manifest": true,
+      "min_pose_score": 0.2,
+      "max_poses_per_frame": 2
+    },
+    "deep_sequence_features": {
+      "frame_count": 32,
+      "require_non_empty": true,
+      "resume": true,
+      "checkpoint_every_clips": 25
+    },
+    "sequence_tcn": {
+      "model_family": "tcn",
+      "max_epochs": 20,
+      "hidden_dim": 64,
+      "depth": 3,
+      "dropout": 0.1,
+      "contact_aux_weight": 0.2,
+      "device": "auto",
+      "prior_feature_mode": "concat_if_available",
+      "resume": true,
+      "checkpoint_every_epoch": true
+    },
+    "lightweight_video": {
+      "max_frames": 16,
+      "cache_inputs": true,
+      "cache_num_workers": 4,
+      "cache_min_free_disk_gb": 30,
+      "cache_max_file_mb": 256
+    },
+    "raw_video_finetune": {
+      "execute_default": true,
+      "max_clips": 1500,
+      "num_frames": 16,
+      "image_size": 112,
+      "batch_size": 2,
+      "max_epochs": 5,
+      "learning_rate": 0.0001,
+      "model_family": "torchvision_r3d18",
+      "pretrained": true,
+      "freeze_backbone": false,
+      "allow_model_download": true,
+      "hidden_dim": 128,
+      "dropout": 0.2,
+      "device": "auto",
+      "resume": true,
+      "require_non_empty": true,
+      "cache_inputs": true,
+      "cache_num_workers": 4,
+      "cache_min_free_disk_gb": 30,
+      "cache_max_file_mb": 256,
+      "dataloader_num_workers": 2
+    },
+    "frozen_visual_encoder": {
+      "install_transformers_default": true,
+      "encoder": "videomae",
+      "model_id": "MCG-NJU/videomae-base-finetuned-kinetics",
+      "allow_model_download": true,
+      "max_clips": 1500,
+      "num_frames": 16,
+      "image_size": 224,
+      "head_epochs": 20,
+      "trust_remote_code": false,
+      "resume": true,
+      "checkpoint_every_clips": 1,
+      "cache_inputs": true,
+      "cache_num_workers": 4,
+      "cache_min_free_disk_gb": 30,
+      "cache_max_file_mb": 256
+    },
+    "vlm_mechanics": {
+      "execute_default": true,
+      "max_clips": 1500,
+      "install_hf_vlm_deps_default": true,
+      "run_hf_captioning_default": true,
+      "run_baseline_default": true,
+      "hf_model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "input_mode": "clip_video",
+      "video_reader_backend": "decord",
+      "fallback_to_debug_frame": true,
+      "caption_max_rows": 100,
+      "caption_fps": 1.0,
+      "caption_max_pixels": 151200,
+      "require_non_empty": true,
+      "cache_inputs": true,
+      "cache_min_free_disk_gb": 30,
+      "cache_max_file_mb": 256,
+      "note_ja": "24 は VLM manifest template と baseline。24b は Hugging Face open-source VLM で caption/tags/scores を埋める。"
+    },
+    "fusion": {
+      "source_runs": [
+        "context_catboost_mlb_2024_2026_v2",
+        "context_catboost_mlb_2024_2026_v2_player_season_projection",
+        "sequence_tcn_mlb_2024_2026_v2",
+        "sequence_tcn_mlb_2024_2026_v2_player_season_projection",
+        "video_lightweight_cv2_mlb_2024_2026_v2",
+        "video_lightweight_cv2_mlb_2024_2026_v2_player_season_projection",
+        "video_frozen_encoder_mlb_2024_2026_v2",
+        "video_frozen_encoder_mlb_2024_2026_v2_player_season_projection",
+        "video_raw_finetune_mlb_2024_2026_v2",
+        "video_raw_finetune_mlb_2024_2026_v2_player_season_projection",
+        "player_season_aggregate_mlb_2024_2026_v2",
+        "vlm_mechanics_mlb_2024_2026_v2",
+        "vlm_mechanics_mlb_2024_2026_v2_player_season_projection"
+      ],
+      "fallback_source_runs": [
+        "context_catboost_mlb_2024_2026_v2",
+        "context_catboost_mlb_2024_2026_v2_player_season_projection",
+        "sequence_structured_mlb_2024_2026_v2",
+        "sequence_structured_mlb_2024_2026_v2_player_season_projection",
+        "video_lightweight_cv2_mlb_2024_2026_v2",
+        "video_lightweight_cv2_mlb_2024_2026_v2_player_season_projection",
+        "video_frozen_encoder_mlb_2024_2026_v2",
+        "video_frozen_encoder_mlb_2024_2026_v2_player_season_projection",
+        "video_raw_finetune_mlb_2024_2026_v2",
+        "video_raw_finetune_mlb_2024_2026_v2_player_season_projection",
+        "player_season_aggregate_mlb_2024_2026_v2",
+        "vlm_mechanics_mlb_2024_2026_v2",
+        "vlm_mechanics_mlb_2024_2026_v2_player_season_projection"
+      ],
+      "learn_weights_from_validation": false
+    }
+  },
+  "readiness_thresholds": {
+    "strict_full_data": true,
+    "min_bbe_rows": 5000,
+    "min_video_sources": 100,
+    "min_media_url_rows": 10,
+    "min_downloaded_videos": 10,
+    "min_clean_clips": 10,
+    "min_trainable_sequences": 10
+  },
+  "recommended_gpu_ja": {
+    "cpu_ok": "00/01/02/03/05/05b/09/10/11 の Statcast・manifest・resolver・report は CPU でよい。CatBoost はまず CPU で安定確認し、必要なら GPU に切り替える。",
+    "l4": "最初の実データ本格 run は L4 推奨。動画 decode、YOLO11m tracking、軽量 RTMPose pilot、VideoMAE-base frozen embedding の費用対効果がよい。",
+    "a100": "VideoMAE Large/DINO large 比較、長尺 clip、batch 増加、将来 fine-tune に進む時は A100 推奨。",
+    "t4": "小規模確認は可能だが、2024-2026 の大量動画処理では遅く、VRAM も詰まりやすい。"
+  },
+  "artifact_groups": [
+    {
+      "name": "preflight",
+      "stage": "00_01",
+      "required": true,
+      "description_ja": "Drive mount、path、import、directory 初期化。",
+      "artifacts": [
+        "reports/preflight/check_env.json",
+        "reports/preflight/init_drive.json"
+      ]
+    },
+    {
+      "name": "event_universe",
+      "stage": "11_statcast_download",
+      "required": true,
+      "description_ja": "2024-2026 real Statcast BBE event universe と leakage-aware split。",
+      "artifacts": [
+        "raw_statcast/statcast_download_progress_2024-03-20_to_{end_date}.json",
+        "manifests/bbe_events_v1.parquet",
+        "manifests/splits/player_group_split_v1.parquet",
+        "manifests/splits/temporal_split_v1.parquet"
+      ]
+    },
+    {
+      "name": "video_sources",
+      "stage": "11_statsapi_resolve",
+      "required": true,
+      "description_ja": "event に紐づく video source candidate manifest。",
+      "artifacts": [
+        "manifests/video_sources_v1.parquet",
+        "reports/preflight/statsapi_video_resolve_progress_v1.json"
+      ]
+    },
+    {
+      "name": "player_season_batting_stats",
+      "stage": "11_f_player_season_stats",
+      "required": false,
+      "description_ja": "BA/OPS/OBP/SLG の player-season ラベル用に MLB StatsAPI から年度別打撃成績を取得する。",
+      "artifacts": [
+        "raw_player_stats/mlb_statsapi_hitting_2024.json",
+        "raw_player_stats/mlb_statsapi_hitting_2025.json",
+        "raw_player_stats/mlb_statsapi_hitting_2026.json",
+        "manifests/player_season_batting_v1.parquet",
+        "reports/preflight/player_season_batting_stats_v1.json"
+      ]
+    },
+    {
+      "name": "context_baseline",
+      "stage": "05b_context_catboost",
+      "required": true,
+      "description_ja": "本格比較軸の CatBoost context-only predictions / metrics。",
+      "artifacts": [
+        "datasets/context_dataset_v1/manifest.parquet",
+        "predictions/{context_run_id}/predictions_v1.parquet",
+        "predictions/{context_run_id}/metrics_v1.json",
+        "reports/preflight/train_context_baseline_{context_run_id}_progress.json"
+      ]
+    },
+    {
+      "name": "downloaded_raw_videos",
+      "stage": "11_direct_media_download",
+      "required": false,
+      "description_ja": "media_url を持つ source だけを Colab / Drive 上で shard download し、merge した manifest。",
+      "artifacts": [
+        "raw_videos/{full_run_id}/download_manifest_shard_1_of_3_v1.parquet",
+        "raw_videos/{full_run_id}/download_manifest_shard_2_of_3_v1.parquet",
+        "raw_videos/{full_run_id}/download_manifest_shard_3_of_3_v1.parquet",
+        "reports/preflight/video_download_{full_run_id}_shard_1_of_3_progress_v1.json",
+        "reports/preflight/video_download_{full_run_id}_shard_2_of_3_progress_v1.json",
+        "reports/preflight/video_download_{full_run_id}_shard_3_of_3_progress_v1.json",
+        "raw_videos/{full_run_id}/download_manifest_v1.parquet"
+      ]
+    },
+    {
+      "name": "clean_clips",
+      "stage": "12_full_cv",
+      "required": false,
+      "description_ja": "本格 CV preprocessing が作る clips_v1。sequence / video baseline の入口。",
+      "artifacts": [
+        "clips/{full_run_id}/candidate_segments_v1.parquet",
+        "clips/{full_run_id}/clips_v1.parquet",
+        "debug/{full_run_id}/debug_overlays_v1.parquet",
+        "reports/preflight/full_cv_preprocess_{full_run_id}.json",
+        "reports/preflight/full_cv_preprocess_{full_run_id}_progress.json"
+      ]
+    },
+    {
+      "name": "sequence_predictions",
+      "stage": "13_full_sequence",
+      "required": false,
+      "description_ja": "structured sequence / player-season prior baseline の predictions。",
+      "artifacts": [
+        "features/structured_sequence_mlb_2024_2026_v2/manifest.parquet",
+        "features/structured_sequence_mlb_2024_2026_v2/frames.parquet",
+        "features/clip_embedding_mlb_2024_2026_v2/manifest.parquet",
+        "features/player_season_embedding_mlb_2024_2026_v2/manifest.parquet",
+        "datasets/sequence_dataset_mlb_2024_2026_v2/manifest.parquet",
+        "datasets/event_with_player_prior_mlb_2024_2026_v2/manifest.parquet",
+        "predictions/{sequence_run_id}/predictions_v1.parquet",
+        "predictions/{sequence_run_id}/metrics_v1.json",
+        "reports/preflight/full_sequence_baseline_{sequence_run_id}.json"
+      ]
+    },
+    {
+      "name": "deep_cv_artifacts",
+      "stage": "16_deep_cv_yolo_pose_homography",
+      "required": false,
+      "description_ja": "YOLO / pose / bat / plate / homography raw CV artifacts。",
+      "artifacts": [
+        "detections/{full_run_id}/detections_v1.parquet",
+        "tracks/{full_run_id}/tracks_v1.parquet",
+        "pose2d/{full_run_id}/pose2d_v1.parquet",
+        "objects/{full_run_id}/bat_detection_v1.parquet",
+        "objects/{full_run_id}/bat_line_v1.parquet",
+        "homography/{full_run_id}/homography_v1.parquet",
+        "reports/preflight/deep_cv_{full_run_id}.json",
+        "reports/preflight/deep_cv_{full_run_id}_progress.json"
+      ]
+    },
+    {
+      "name": "cv_overlay_videos",
+      "stage": "21_cv_overlay_videos",
+      "required": false,
+      "description_ja": "YOLO bbox / tracking id / pose skeleton / bat line を元clipに焼き込んだ目視確認用 mp4。",
+      "artifacts": [
+        "debug/{full_run_id}/cv_overlay_videos_v1.parquet",
+        "debug/{full_run_id}/cv_overlays",
+        "debug/{full_run_id}/debug_overlays_v1.parquet",
+        "reports/preflight/cv_overlay_videos_{full_run_id}.json",
+        "reports/preflight/cv_overlay_videos_{full_run_id}_progress.json"
+      ]
+    },
+    {
+      "name": "sequence_tcn_predictions",
+      "stage": "18_sequence_tcn_training",
+      "required": false,
+      "description_ja": "deep structured sequence features から作る TCN / MS-TCN predictions。",
+      "artifacts": [
+        "features/structured_sequence_mlb_2024_2026_v2/manifest.parquet",
+        "features/structured_sequence_mlb_2024_2026_v2/frames.parquet",
+        "reports/preflight/deep_sequence_features_{full_run_id}.json",
+        "reports/preflight/deep_sequence_features_{full_run_id}_progress.json",
+        "predictions/{sequence_tcn_run_id}/predictions_v1.parquet",
+        "predictions/{sequence_tcn_run_id}/metrics_v1.json",
+        "reports/preflight/train_tcn_{sequence_tcn_run_id}.json",
+        "reports/preflight/train_tcn_{sequence_tcn_run_id}_progress.json",
+        "models/sequence/{sequence_tcn_run_id}/checkpoint.pt"
+      ]
+    },
+    {
+      "name": "lightweight_video_predictions",
+      "stage": "14_full_video_baseline",
+      "required": false,
+      "description_ja": "raw clip の lightweight OpenCV feature baseline predictions。frozen VideoMAE とは別 run_id に保存する。",
+      "artifacts": [
+        "features/video_lightweight_features_mlb_2024_2026_v2/manifest.parquet",
+        "predictions/{video_lightweight_run_id}/predictions_v1.parquet",
+        "predictions/{video_lightweight_run_id}/metrics_v1.json",
+        "reports/preflight/full_video_baseline_{video_lightweight_run_id}.json"
+      ]
+    },
+    {
+      "name": "frozen_visual_predictions",
+      "stage": "19_frozen_visual_encoder",
+      "required": false,
+      "description_ja": "VideoMAE / DINO frozen embedding + lightweight supervised head predictions。",
+      "artifacts": [
+        "features/video_embedding_mlb_2024_2026_v2/manifest.parquet",
+        "predictions/{video_run_id}/predictions_v1.parquet",
+        "predictions/{video_run_id}/metrics_v1.json",
+        "reports/preflight/frozen_visual_encoder_{video_run_id}.json",
+        "reports/preflight/frozen_visual_encoder_{video_run_id}_progress.json",
+        "models/video/{video_run_id}/linear_head_checkpoint.pt"
+      ]
+    },
+    {
+      "name": "raw_video_finetune_predictions",
+      "stage": "19b_raw_video_finetune",
+      "required": false,
+      "description_ja": "contact-aligned raw frames を small 3D CNN に入れて stat heads を学習する ablation predictions。",
+      "artifacts": [
+        "predictions/{video_finetune_run_id}/predictions_v1.parquet",
+        "predictions/{video_finetune_run_id}/metrics_v1.json",
+        "reports/preflight/raw_video_finetune_{video_finetune_run_id}.json",
+        "reports/preflight/raw_video_finetune_{video_finetune_run_id}_progress.json",
+        "models/video/{video_finetune_run_id}/checkpoint.pt"
+      ]
+    },
+    {
+      "name": "vlm_mechanics_predictions",
+      "stage": "24_vlm_mechanics_baseline",
+      "required": false,
+      "description_ja": "batting clip の VLM caption/tags/scores から mechanics features と event predictions を作る。",
+      "artifacts": [
+        "features/vlm_mechanics_mlb_2024_2026_v2/manifest.parquet",
+        "reports/preflight/vlm_feature_template_vlm_mechanics_mlb_2024_2026_v2.json",
+        "reports/preflight/hf_vlm_captioning_vlm_mechanics_mlb_2024_2026_v2.json",
+        "datasets/vlm_feature_samples/{vlm_run_id}/manifest.parquet",
+        "predictions/{vlm_run_id}/predictions_v1.parquet",
+        "predictions/{vlm_run_id}/metrics_v1.json",
+        "reports/preflight/vlm_feature_baseline_{vlm_run_id}.json"
+      ]
+    },
+    {
+      "name": "method_evaluation_outputs",
+      "stage": "25_method_evaluation",
+      "required": false,
+      "description_ja": "fusion 前の visual/mechanics 手法を context-only 除外で比較する研究用出力。",
+      "artifacts": [
+        "reports/method_evaluation/{method_evaluation_report_id}/index.html",
+        "reports/method_evaluation/{method_evaluation_report_id}/summary.json",
+        "reports/method_evaluation/{method_evaluation_report_id}/tables/method_metrics.csv",
+        "reports/method_evaluation/{method_evaluation_report_id}/tables/sample_counts.csv",
+        "reports/method_evaluation/{method_evaluation_report_id}/tables/same_sample_intersection_metrics.csv",
+        "reports/ablation_compare/{video_ablation_report_id}/index.html",
+        "reports/ablation_compare/{video_ablation_report_id}/summary.json"
+      ]
+    },
+    {
+      "name": "fusion_predictions",
+      "stage": "15_full_fusion",
+      "required": false,
+      "description_ja": "context / sequence / video / prior を late fusion した predictions。",
+      "artifacts": [
+        "predictions/{fusion_run_id}/predictions_v1.parquet",
+        "predictions/{fusion_run_id}/metrics_v1.json",
+        "predictions/{fusion_run_id}/fusion_input_audit_v1.parquet",
+        "reports/preflight/full_fusion_{fusion_run_id}.json"
+      ]
+    }
+  ],
+  "heavy_steps": [
+    {
+      "stage": "11_statcast_and_video_source_download",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": false,
+      "notes_ja": "2024-03-20 から runtime today まで Baseball Savant CSV と exact playId 優先の video candidate resolve。network download は notebook で明示的に有効化する。"
+    },
+    {
+      "stage": "11_direct_media_download",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": false,
+      "notes_ja": "media_url がある source のみ download する。scraping / access bypass はしない。"
+    },
+    {
+      "stage": "12_full_cv",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": false,
+      "notes_ja": "download/local video の decode、lightweight probe、motion contact 推定、contact-centered trim を行う。CPU でも動くが L4 runtime の方が後段へ移りやすい。"
+    },
+    {
+      "stage": "16_deep_cv_yolo_pose_homography",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": true,
+      "notes_ja": "YOLO11 tracking、Colab Python 3.12 では MediaPipe pose backend を優先し、RTMPose/OpenMMLab は Python 3.10/3.11 環境向けの optional backend として残す。bat/plate/homography artifact も作る。"
+    },
+    {
+      "stage": "21_cv_overlay_videos",
+      "human_confirmation_required": false,
+      "colab_only": false,
+      "gpu_required": false,
+      "notes_ja": "16 の CV artifacts を元clipに焼き込む確認用 mp4 作成。既存 artifact から描画するだけなので GPU は不要。"
+    },
+    {
+      "stage": "18_sequence_tcn_training",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": true,
+      "notes_ja": "TCN / MS-TCN structured sequence training。xBA/xwOBA missing mask と OPS event-head 禁止を守る。"
+    },
+    {
+      "stage": "19_frozen_visual_encoder",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": true,
+      "notes_ja": "VideoMAE / DINO frozen embedding と lightweight supervised head。初回は L4、large model / 長尺 clip / 多 encoder 比較は A100。"
+    },
+    {
+      "stage": "19b_raw_video_finetune",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": true,
+      "notes_ja": "contact-aligned RGB frames を直接 DNN に入れる baseline。初回は 500 clips / L4、小さめ設定で確認する。"
+    },
+    {
+      "stage": "24_vlm_mechanics_baseline",
+      "human_confirmation_required": true,
+      "colab_only": true,
+      "gpu_required": true,
+      "notes_ja": "34/24b で Hugging Face open-source VLM を 100 clip 目安で実行し、必要な transformers / qwen-vl-utils などを notebook 内で install する。template/baseline だけなら CPU でも可。"
+    }
+  ]
+}

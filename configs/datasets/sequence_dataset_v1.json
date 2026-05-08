@@ -1,0 +1,34 @@
+{
+  "schema_version": "sequence_dataset_config_v1",
+  "contract_version": "sequence_dataset_contract_v1",
+  "input_artifacts": {
+    "structured_sequence_manifest": "features/structured_sequence_v1/manifest.parquet",
+    "clip_embeddings": "features/clip_embedding_v1/manifest.parquet",
+    "player_group_split": "manifests/splits/player_group_split_v1.parquet",
+    "temporal_split": "manifests/splits/temporal_split_v1.parquet",
+    "target_registry": "configs/targets/target_registry_v1.yaml"
+  },
+  "output_artifacts": {
+    "sequence_dataset": "datasets/sequence_dataset_v1/manifest.parquet",
+    "event_with_player_prior": "datasets/event_with_player_prior_v1/manifest.parquet"
+  },
+  "prediction_levels": {
+    "event": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+    "player_season": ["ops", "obp", "slg", "avg_ev", "hard_hit_rate", "barrel_rate"]
+  },
+  "default_prior_modes": ["none", "past_only", "oracle_full_season"],
+  "default_aggregation_method": "quality_weighted_pooling",
+  "aggregation_scopes": {
+    "event_only": "current_event_only",
+    "event_with_prior": "current_event_with_player_season_prior",
+    "same_event_ensemble": "same_event_view_crop_augmentation_ensemble",
+    "player_season_task": "player_season_aggregate"
+  },
+  "rules": [
+    "Do not average predictions from different events into one event prediction.",
+    "Use same_event_ensemble only for same event_id / same_event_group_id variants.",
+    "Use player-season prior only as conditioning metadata for an event prediction.",
+    "OPS is player-season or rolling-window only; do not emit event-level OPS rows."
+  ]
+}
+

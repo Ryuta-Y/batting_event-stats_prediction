@@ -1,0 +1,39 @@
+{
+  "schema_version": "context_baseline_v1",
+  "model_family": "context_only_baseline",
+  "default_backend": "constant_mean_baseline",
+  "recommended_full_backend": "catboost",
+  "future_backends": ["xgboost"],
+  "feature_columns": [
+    "pitch_type",
+    "release_speed",
+    "plate_x",
+    "plate_z",
+    "zone",
+    "balls",
+    "strikes",
+    "stand",
+    "p_throws",
+    "season",
+    "home_team",
+    "away_team"
+  ],
+  "blocked_leakage_columns": [
+    "events",
+    "description",
+    "bb_type",
+    "launch_speed",
+    "launch_angle",
+    "launch_speed_angle",
+    "target_hard_hit",
+    "target_barrel",
+    "estimated_ba_using_speedangle",
+    "estimated_woba_using_speedangle",
+    "target_ops"
+  ],
+  "notes": [
+    "The smoke notebook uses constant_mean_baseline for dependency-free contract checks.",
+    "The recommended full context baseline is configs/models/context/catboost_context_v1.json.",
+    "Heavy CatBoost/XGBoost training belongs in Colab, not local tests."
+  ]
+}

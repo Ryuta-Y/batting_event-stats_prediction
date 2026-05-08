@@ -1,0 +1,37 @@
+{
+  "schema_version": "player_season_prior_config_v1",
+  "contract_version": "sequence_contract_v1",
+  "input_artifact": "features/clip_embedding_v1/manifest.parquet",
+  "output_artifact": "features/player_season_embedding_v1/manifest.parquet",
+  "prior_modes": {
+    "none": "No player-season mechanics prior.",
+    "same_season_train_only": "Use clean clips from the same batter-season in the training split only.",
+    "past_only": "Use only clean clips earlier than the current event game_date.",
+    "oracle_full_season": "Analysis-only mode using the full season except the current event."
+  },
+  "aggregation_methods": [
+    "mean_pooling",
+    "quality_weighted_pooling",
+    "attention_pooling"
+  ],
+  "quality_weight_inputs": [
+    "quality_tier",
+    "contact_confidence",
+    "pose_coverage",
+    "view_confidence",
+    "clean_cohort_eligible"
+  ],
+  "clean_prior_filter": {
+    "clip_status": "clean_clip",
+    "quality_tier": "usable_primary",
+    "clean_cohort_eligible": true,
+    "target_alignment_status": "event_aligned",
+    "exclude_current_event": true
+  },
+  "leakage_policy": {
+    "past_only": "require prior_clip.game_date < current_event.game_date",
+    "oracle_full_season": "allowed for analysis only and must set uses_future_clips when applicable",
+    "same_event_views": "must be handled by same_event_ensemble, not player-season prior"
+  }
+}
+

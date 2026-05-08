@@ -1,0 +1,15 @@
+{
+  "schema_version": "frozen_visual_encoder_config_v1",
+  "prediction_run_id": "video_frozen_encoder_mlb_2024_2026_v1",
+  "default_video_encoder": "videomae",
+  "video_model_id": "MCG-NJU/videomae-base-finetuned-kinetics",
+  "video_trust_remote_code": false,
+  "image_encoder": "dinov3",
+  "image_model_id": "facebook/dinov3-vits16-pretrain-lvd1689m",
+  "num_frames": 16,
+  "image_size": 224,
+  "head_epochs_pilot": 20,
+  "model_download_requires_human_flag": true,
+  "event_heads": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+  "forbidden_event_heads": ["ops"]
+}

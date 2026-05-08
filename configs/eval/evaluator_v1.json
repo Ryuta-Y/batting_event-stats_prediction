@@ -1,0 +1,29 @@
+{
+  "schema_version": "evaluator_v1",
+  "prediction_artifact": "predictions/{run_id}/predictions_v1.parquet",
+  "metrics_artifact": "predictions/{run_id}/metrics_v1.json",
+  "target_registry": "configs/targets/target_registry_v1.yaml",
+  "official_metric_filter": {
+    "require_target_available": true,
+    "require_prediction_level_match": true,
+    "skip_missing_y_true": true,
+    "skip_missing_y_pred": true
+  },
+  "required_prediction_columns": [
+    "run_id",
+    "sample_id",
+    "event_id",
+    "batter_season_id",
+    "prediction_level",
+    "target_name",
+    "y_true",
+    "y_pred",
+    "target_available",
+    "target_source",
+    "head_kind",
+    "loss_name",
+    "aggregation_scope",
+    "prior_mode",
+    "label_missing_reason"
+  ]
+}

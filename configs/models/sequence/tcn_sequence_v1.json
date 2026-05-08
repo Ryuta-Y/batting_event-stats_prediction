@@ -1,0 +1,19 @@
+{
+  "schema_version": "sequence_tcn_config_v1",
+  "prediction_run_id": "sequence_tcn_mlb_2024_2026_v1",
+  "model_family": "tcn",
+  "comparison_model_family": "ms_tcn",
+  "hidden_dim": 64,
+  "depth": 3,
+  "kernel_size": 3,
+  "dilations": [1, 2, 4],
+  "dropout": 0.1,
+  "contact_aux_weight": 0.2,
+  "regression_targets_normalized_on_train_split": true,
+  "max_epochs_pilot": 20,
+  "learning_rate": 0.001,
+  "device": "auto",
+  "event_heads": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+  "forbidden_event_heads": ["ops"],
+  "optional_missing_labels_are_masked": ["xba", "xwoba"]
+}

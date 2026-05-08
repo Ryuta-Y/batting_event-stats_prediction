@@ -1,0 +1,51 @@
+{
+  "schema_version": "static_reports_v1",
+  "colab_paths": {
+    "repo_dir": "/content/drive/MyDrive/codex/batting_codex_handoff",
+    "base_dir": "/content/drive/MyDrive/baseball_vision",
+    "cache_dir": "/content/cache/baseball_vision"
+  },
+  "inputs": {
+    "predictions": "predictions/{run_id}/predictions_v1.parquet",
+    "metrics": "predictions/{run_id}/metrics_v1.json",
+    "clips": "clips/{run_id}/clips_v1.parquet",
+    "fusion_audit": "predictions/{run_id}/fusion_input_audit_v1.parquet"
+  },
+  "outputs": {
+    "target_availability": "reports/target_availability/{run_id}/index.html",
+    "experiment_compare": "reports/experiment_compare/{run_id}/index.html",
+    "failure_browser": "reports/failure_browser/{run_id}/index.html",
+    "clip_quality": "reports/clip_quality/{run_id}/index.html",
+    "pipeline_dashboard": "reports/pipeline_dashboard/{run_id}/index.html",
+    "pipeline_dashboard_summary": "reports/pipeline_dashboard/{run_id}/summary.json"
+  },
+  "required_report_content": {
+    "target_availability": [
+      "xBA available and missing count",
+      "xwOBA available and missing count",
+      "OPS unavailable reason"
+    ],
+    "clip_quality": [
+      "clean_clip count",
+      "review_only count",
+      "excluded count"
+    ],
+    "experiment_compare": [
+      "per target metrics",
+      "same-event ensemble comparison",
+      "player-season prior comparison"
+    ],
+    "failure_browser": [
+      "high error rows",
+      "missing label rows",
+      "clip and overlay links only"
+    ],
+    "pipeline_dashboard": [
+      "artifact completeness by stage",
+      "all reportable prediction run paths",
+      "main metric winners",
+      "visual evidence artifact paths"
+    ]
+  },
+  "large_artifact_policy": "Report pages link to Drive video/overlay artifacts and do not copy large videos or model weights into the repo."
+}

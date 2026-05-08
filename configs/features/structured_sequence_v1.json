@@ -1,0 +1,66 @@
+{
+  "schema_version": "structured_sequence_feature_config_v1",
+  "contract_version": "sequence_contract_v1",
+  "input_artifacts": {
+    "clips": "clips/{run_id}/clips_v1.parquet",
+    "pose2d": "pose2d/{run_id}/pose2d_v1.parquet",
+    "bat_line": "objects/{run_id}/bat_line_v1.parquet",
+    "homography": "homography/{run_id}/homography_v1.parquet"
+  },
+  "output_artifacts": {
+    "frame_features": "features/structured_sequence_v1/frames.parquet",
+    "manifest": "features/structured_sequence_v1/manifest.parquet",
+    "clip_embeddings": "features/clip_embedding_v1/manifest.parquet"
+  },
+  "feature_namespace": "structured_batting_kinematics_v1",
+  "frame_level_feature_groups": [
+    "canonical_pose_keypoints",
+    "keypoint_confidence",
+    "joint_angles",
+    "joint_velocity",
+    "joint_acceleration",
+    "pelvis_trunk_proxy",
+    "hand_velocity",
+    "bat_knob_tip",
+    "bat_angle",
+    "bat_angular_velocity",
+    "bat_visible_length",
+    "plate_line_homography_geometry",
+    "view_label",
+    "quality_flags"
+  ],
+  "phase_labels": [
+    "stance_load",
+    "stride",
+    "launch",
+    "swing",
+    "contact",
+    "follow_through",
+    "unknown"
+  ],
+  "sequence_window_policy": {
+    "primary_clip_version": "pre_contact_long",
+    "align_to": "contact_time_sec",
+    "default_sample_rate_fps": 30,
+    "default_frame_count": 32,
+    "pad_or_crop": "center_on_contact",
+    "missing_contact": "review_only"
+  },
+  "model_family": {
+    "first_baseline": "tcn",
+    "comparison_hooks": ["ms_tcn", "gru", "small_transformer", "st_gcn", "posec3d"]
+  },
+  "tcn_baseline_params": {
+    "num_layers": 4,
+    "hidden_dim": 128,
+    "kernel_size": 3,
+    "dropout": 0.2,
+    "normalization": "layer_norm",
+    "early_stopping_patience": 10,
+    "max_epochs": 100
+  },
+  "auxiliary_tasks": {
+    "phase_logits": true,
+    "contact_heatmap": true
+  }
+}

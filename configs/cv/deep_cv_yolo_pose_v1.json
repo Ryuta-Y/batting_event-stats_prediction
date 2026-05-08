@@ -1,0 +1,18 @@
+{
+  "schema_version": "deep_cv_config_v1",
+  "run_id": "mlb_2024_2026_full_v2",
+  "default_person_model": "yolo11m.pt",
+  "default_object_model": null,
+  "tracker": "bytetrack.yaml",
+  "rtmpose_model": "rtmpose-l_8xb32-270e_coco-wholebody-384x288",
+  "max_frames_per_clip_pilot": 180,
+  "install_or_download_requires_human_flag": true,
+  "outputs": [
+    "detections/{run_id}/detections_v1.parquet",
+    "tracks/{run_id}/tracks_v1.parquet",
+    "pose2d/{run_id}/pose2d_v1.parquet",
+    "objects/{run_id}/bat_detection_v1.parquet",
+    "objects/{run_id}/bat_line_v1.parquet",
+    "homography/{run_id}/homography_v1.parquet"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "catboost_context_config_v1",
+  "model_family": "context_catboost",
+  "download_scope": "colab_only",
+  "local_training_allowed": false,
+  "target_registry": "configs/targets/target_registry_v1.yaml",
+  "allowed_event_targets": ["ev", "la", "hard_hit", "barrel", "xba", "xwoba"],
+  "excluded_event_heads": ["ops"],
+  "feature_columns": [
+    "batter_id",
+    "pitcher_id",
+    "season",
+    "stand",
+    "p_throws",
+    "pitch_type",
+    "release_speed",
+    "plate_x",
+    "plate_z",
+    "zone",
+    "balls",
+    "strikes",
+    "outs_when_up",
+    "inning",
+    "inning_topbot",
+    "home_team",
+    "away_team"
+  ],
+  "categorical_features": [
+    "batter_id",
+    "pitcher_id",
+    "season",
+    "stand",
+    "p_throws",
+    "pitch_type",
+    "zone",
+    "inning_topbot",
+    "home_team",
+    "away_team"
+  ],
+  "blocked_leakage_columns": [
+    "events",
+    "description",
+    "bb_type",
+    "launch_speed",
+    "launch_angle",
+    "launch_speed_angle",
+    "target_hard_hit",
+    "target_barrel",
+    "estimated_ba_using_speedangle",
+    "estimated_woba_using_speedangle",
+    "target_ops"
+  ],
+  "catboost_params": {
+    "iterations": 1000,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "early_stopping_rounds": 50,
+    "random_seed": 2026,
+    "allow_writing_files": false
+  },
+  "notes_ja": [
+    "context-only の本格 baseline は CatBoost を推奨する。",
+    "local では依存を入れず、Colab で人間が明示して pip install catboost してから実行する。",
+    "BBE 後にしか分からない outcome / target 列は feature に使わない。",
+    "OPS は event-level head にせず、PA manifest が正式化されるまで unavailable/skip のままにする。"
+  ]
+}
